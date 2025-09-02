@@ -1,1 +1,15 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
+let listaDeNomes = [];
+
+function adicionarAmigo() {
+    let nomeAmigo = document.getElementById('amigo').value;
+    if (nomeAmigo !== '') {
+        listaDeNomes.push(nomeAmigo);
+        document.getElementById('amigo').value = '';
+        document.getElementById('listaAmigos').innerText = listaDeNomes.join(', ');
+    }
+}
+
+function sortearAmigo() {
+    let sorteiaNomes = Math.floor(Math.random() * listaDeNomes.length);
+    return listaDeNomes[sorteiaNomes];
+}
