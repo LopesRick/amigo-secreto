@@ -13,18 +13,24 @@ function adicionarAmigo() {
     }
     listaDeNomes.push(nomeAmigo);
     document.getElementById('amigo').value = '';
-    document.getElementById('listaAmigos').innerText = listaDeNomes.join(', ');
+    document.getElementById('listaAmigos').innerHTML = listaDeNomes.join('<br>');
 }
-
-/*function verificarSorteio() {
-    if (listaDeNomes.length < 2) {
-        alert("Adicione pelo menos dois nomes para sortear.");
-        return;
-    }
-}*/ //Revisar depois
+function limparTela() {
+    listaDeNomes = [];
+    document.getElementById('listaAmigos').innerText = '';
+    document.getElementById('resultado').innerText = '';
+}
 
 function sortearAmigo() {
     let nomeSorteado = Math.floor(Math.random() * listaDeNomes.length);
-    let amigoSorteado = listaDeNomes[nomeSorteado];
-    document.getElementById('resultado').innerText = `O amigo sorteado foi: ${amigoSorteado}`;
+    if (nomeSorteado === undefined || listaDeNomes.length < 2) {
+        document.getElementById('resultado').innerText = `Adicione pelo menos dois nomes para sortear.`;
+        document.getElementById('resultado').style.color = 'red';
+        return;
+    } else{
+        let amigoSorteado = listaDeNomes[nomeSorteado];
+        document.getElementById('resultado').innerText = `O amigo sorteado foi: ${amigoSorteado}`;
+        document.getElementById('resultado').style.color = 'green';
+        return;
+    }
 }
