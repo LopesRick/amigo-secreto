@@ -34,3 +34,9 @@ function sortearAmigo() {
         return;
     }
 }
+let botaoEnter = document.getElementById('amigo');
+botaoEnter.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        adicionarAmigo();
+    }
+});
