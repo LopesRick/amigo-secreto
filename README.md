@@ -23,3 +23,6 @@
 ### Extras:
   *  Implementado o comando na caixa de pesquisa que ao precionar a tecla `Enter` após o nome, ele sera adicionado a lista.
   *  Implementado o botão `reset` ao ser ultilizado depois do sorteio.
+
+## Acesso ao projeto
+### você pode acessar usando este link: https://lopesrick.github.io/amigo-secreto/
